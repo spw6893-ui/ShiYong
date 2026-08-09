@@ -2,6 +2,8 @@
 
 面向普通用户的 AI 效率内容与资料网站。产品以每周总结和可筛选资料库为核心，内容包括 AI 方法、工作流、工具和对比汇总。
 
+生产环境：<https://resource-sharing-phi.vercel.app>
+
 AI 效率方向的产品与内容重构草案见：
 
 - `docs/ai-efficiency-content-spec.md`
