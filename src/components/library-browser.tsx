@@ -61,7 +61,7 @@ export function LibraryBrowser({items}: {items: LibraryCardData[]}) {
       <div className="library-card-top"><div className="resource-page-logo" style={{background: item.color}}><Icon icon={item.icon} /></div><span className={`library-type type-${item.type}`}>{item.type}</span></div>
       <span>{item.scenario}</span><h2>{item.title}</h2><p>{item.summary}</p>
       <div className="library-card-facts"><b className={item.reviewOverdue ? "review-overdue" : ""}><Icon icon={item.reviewOverdue ? "solar:danger-triangle-bold" : "solar:clock-circle-bold"} />{item.reviewOverdue ? "超过 90 天，待复核" : item.type === "工具" && item.verifiedAt ? `验证于 ${item.verifiedAt}` : `${item.readingTime} 分钟`}</b><b><Icon icon="solar:wallet-money-bold" />{item.cost}</b></div>
-      {item.externalUrl ? <Button as="a" href={item.externalUrl} target="_blank" rel="noreferrer" className="visit-button" endContent={<Icon icon="solar:arrow-up-linear" />}>打开官方入口</Button> : <Button as="a" href={`/resources/${item.slug}`} className="read-button" endContent={<Icon icon="solar:arrow-right-linear" />}>阅读内容</Button>}
+      <div className="library-card-actions"><Button as="a" href={`/resources/${item.slug}`} className="read-button" endContent={<Icon icon="solar:arrow-right-linear" />}>{item.type === "工具" ? "查看说明" : "阅读内容"}</Button>{item.externalUrl && <Button as="a" href={item.externalUrl} target="_blank" rel="noreferrer" className="visit-button" endContent={<Icon icon="solar:arrow-up-linear" />}>官网</Button>}</div>
     </article>)}{filtered.length === 0 && <div className="resource-empty"><Icon icon="solar:magnifer-linear" /><h2>没有找到匹配资料</h2><p>换个关键词，或者清除筛选后再试。</p><Button variant="flat" onPress={reset}>清除筛选</Button></div>}</section>
   </div>;
 }

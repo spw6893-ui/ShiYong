@@ -95,6 +95,9 @@ content/weekly/2026-08-week-3.mdx
 - `featured`：是否进入精选内容池
 - `status`：`draft` / `published`，草稿不会出现在网站中
 - `priority`：非负整数；数字越大越靠前，同优先级按发布日期倒序
+- `updatedAt`：正文最近更新时间
+- `updatedBy`：`human` / `agent`，标记最后编辑者
+- `sources`：核查信息使用的官方来源 URL 数组
 
 ## 维护原则
 

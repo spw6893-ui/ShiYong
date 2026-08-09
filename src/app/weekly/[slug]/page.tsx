@@ -23,5 +23,5 @@ export default async function WeeklyDetailPage({params}: PageProps) {
   const issue = allWeeklyIssues.find((entry) => entry.slug === slug && isPublished(entry));
   if (!issue) notFound();
 
-  return <main><SiteHeader /><div className="inner-shell"><ArticleShell title={issue.title} summary={issue.summary} eyebrow={`每周总结 · ${issue.issue}`} readingTime={issue.readingTime} publishedAt={issue.publishedAt} content={issue.content} backHref="/weekly" backLabel="返回每周总结" /></div><SiteFooter /></main>;
+  return <main><SiteHeader /><div className="inner-shell"><ArticleShell title={issue.title} summary={issue.summary} eyebrow={`每周总结 · ${issue.issue}`} readingTime={issue.readingTime} publishedAt={issue.publishedAt} sources={issue.sources} content={issue.content} backHref="/weekly" backLabel="返回每周总结" /></div><SiteFooter /></main>;
 }

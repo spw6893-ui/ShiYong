@@ -1,0 +1,53 @@
+---
+title: 用 NotebookLM 围绕课程资料提问
+summary: 把教材、讲义和课堂记录放进同一知识库，并沿着引用位置复核答案。
+type: 工作流
+scenario: 学习与文档
+cost: 免费
+readingTime: 8
+difficulty: 小白
+icon: solar:notebook-bold
+color: "#4285f4"
+publishedAt: 2026-08-09
+featured: true
+status: published
+priority: 89
+updatedAt: 2026-08-09
+updatedBy: human
+sources:
+  - https://support.google.com/notebooklm/answer/16164461
+  - https://support.google.com/notebooklm/answer/16215270
+  - https://support.google.com/notebooklm/answer/16179559
+---
+
+NotebookLM 适合回答“我的资料里怎么说”，而不是替代全网搜索。官方说明显示，它支持 PDF、网页、YouTube、音频和多种办公文件，并在回答中提供指向来源位置的引用。
+
+<Steps>
+### 第一步：按课程建立笔记本
+
+一个笔记本只围绕一门课或一个清晰主题，避免把无关材料混在一起。
+
+### 第二步：上传主资料
+
+优先放入课程大纲、教材章节、讲义和自己的课堂记录。检查文件版本与使用权限。
+
+### 第三步：先问范围问题
+
+让它列出资料覆盖的主题、缺失章节和不同来源之间的关系，不要一开始就要求完整复习笔记。
+
+### 第四步：沿引用复核
+
+点击关键结论旁的引用，确认原文语境。尤其检查定义、公式、例外条件和考试范围。
+
+### 第五步：生成主动回忆材料
+
+要求生成问题、答案和对应来源，再隐藏答案进行自测。
+</Steps>
+
+<PromptBlock title="课程资料提问模板">
+只根据当前选中的课程资料回答。请列出本章 8 个核心问题，每个问题提供简短答案和引用位置。再列出资料中容易混淆的 3 组概念。如果资料没有覆盖某个问题，请直接写“资料未说明”。
+</PromptBlock>
+
+<Callout type="info" title="隐私提醒">
+Google 官方说明：NotebookLM 内容不会直接用于训练基础模型，除非你选择提交反馈；提交反馈时可能收集相关上下文。仍不要上传无权处理的敏感资料。
+</Callout>

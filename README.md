@@ -35,6 +35,7 @@ npm start
 - `content/library/`：资料库 MDX 内容
 - `content/weekly/`：每周总结 MDX 内容
 - `docs/content-authoring.md`：内容添加与组件说明
+- `docs/content-research-playbook.md`：内容调研、收录和 Agent 更新规则
 
 ## 持续集成与部署
 

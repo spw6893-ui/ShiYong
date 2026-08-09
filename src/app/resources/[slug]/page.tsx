@@ -23,5 +23,5 @@ export default async function LibraryDetailPage({params}: PageProps) {
   const item = allLibraryItems.find((entry) => entry.slug === slug && isPublished(entry));
   if (!item) notFound();
 
-  return <main><SiteHeader /><div className="inner-shell"><ArticleShell title={item.title} summary={item.summary} eyebrow={`${item.type} · ${item.scenario}`} readingTime={item.readingTime} publishedAt={item.publishedAt} verifiedAt={item.verifiedAt} reviewOverdue={item.type === "工具" && isReviewOverdue(item.verifiedAt)} content={item.content} /></div><SiteFooter /></main>;
+  return <main><SiteHeader /><div className="inner-shell"><ArticleShell title={item.title} summary={item.summary} eyebrow={`${item.type} · ${item.scenario}`} readingTime={item.readingTime} publishedAt={item.publishedAt} verifiedAt={item.verifiedAt} reviewOverdue={item.type === "工具" && isReviewOverdue(item.verifiedAt)} sources={item.sources} content={item.content} /></div><SiteFooter /></main>;
 }

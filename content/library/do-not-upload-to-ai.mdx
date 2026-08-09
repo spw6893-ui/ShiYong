@@ -1,0 +1,58 @@
+---
+title: 哪些资料不应该直接上传给 AI
+summary: 用一份上传前检查表，避开账号、个人信息、商业机密和受限制材料。
+type: 方法
+scenario: 信息管理
+cost: 免费
+readingTime: 7
+difficulty: 小白
+icon: solar:shield-warning-bold
+color: "#d56548"
+publishedAt: 2026-08-09
+featured: true
+status: published
+priority: 88
+updatedAt: 2026-08-09
+updatedBy: human
+sources:
+  - https://help.openai.com/en/articles/7730893-how-do-i-delete-my-chat-history
+  - https://support.google.com/notebooklm/answer/17004255
+---
+
+上传文件前，先问一句：**如果这份内容被不该看到的人看到，会造成什么后果？** 工具提供隐私设置，不代表任何材料都适合上传。
+
+## 默认不要上传的内容
+
+- 密码、验证码、API Key、身份证号和银行卡信息。
+- 包含姓名、手机号、地址、病历或成绩的个人资料。
+- 未公开的合同、报价、财务数据、客户名单和产品计划。
+- 受保密协议、公司制度或客户合同限制的文件。
+- 你没有权利复制或交给第三方处理的材料。
+
+## 上传前四步处理
+
+<Steps>
+### 第一步：只截取必要部分
+
+不要上传完整数据库或整份合同。只保留完成当前任务真正需要的段落和字段。
+
+### 第二步：替换身份信息
+
+把真实姓名、公司名、项目名和联系方式替换成“客户 A”“项目 B”等占位符。
+
+### 第三步：检查账户设置
+
+确认当前使用的是个人账户还是组织账户，并查看数据控制、保留和训练相关设置。
+
+### 第四步：无法确认就不上传
+
+改用虚构样例描述问题，或者选择经过组织批准的工具和本地处理方案。
+</Steps>
+
+<Callout type="warning" title="容易忽略">
+删除姓名并不一定完成匿名化。订单号、精确日期、职位和少量组合字段也可能重新指向某个人。
+</Callout>
+
+<PromptBlock title="用虚构样例求助">
+我需要解决一类问题，但不能提供真实数据。下面是字段结构和三行虚构样例：[填写]\n请根据样例说明处理方法、公式或步骤，不要推测真实业务信息。
+</PromptBlock>

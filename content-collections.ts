@@ -31,6 +31,9 @@ const library = defineCollection({
     featured: z.boolean().default(false),
     status: z.enum(statuses).default("published"),
     priority: z.number().int().min(0).default(0),
+    updatedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+    updatedBy: z.enum(["human", "agent"]).default("human"),
+    sources: z.array(z.string().url()).default([]),
     content: z.string(),
   }),
   transform: async (document, context) => ({
@@ -52,6 +55,9 @@ const weekly = defineCollection({
     readingTime: z.number().int().positive(),
     status: z.enum(statuses).default("published"),
     priority: z.number().int().min(0).default(0),
+    updatedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+    updatedBy: z.enum(["human", "agent"]).default("human"),
+    sources: z.array(z.string().url()).default([]),
     content: z.string(),
   }),
   transform: async (document, context) => ({
