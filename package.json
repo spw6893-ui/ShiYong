@@ -1,0 +1,37 @@
+{
+  "name": "shiyong-resource-sharing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@content-collections/core": "^0.15.2",
+    "@content-collections/mdx": "^0.2.2",
+    "@content-collections/next": "^0.2.11",
+    "@heroui/react": "2.8.5",
+    "@heroui/theme": "2.4.20",
+    "@iconify/react": "latest",
+    "framer-motion": "latest",
+    "next": "latest",
+    "next-themes": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "remark-gfm": "^4.0.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "postcss": "latest",
+    "tailwindcss": "3.4.17",
+    "typescript": "latest"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
+  }
+}
