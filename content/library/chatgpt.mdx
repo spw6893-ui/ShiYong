@@ -1,41 +1,74 @@
 ---
 title: ChatGPT
-summary: 适合写作、总结、学习和任务拆解的通用 AI 助手。
+summary: 上传 PDF、PPT 和表格后完成提取、改写、分析与图表，并根据任务切换搜索、深度研究或学习模式。
 type: 工具
-scenario: 通用助手
+scenario: 综合任务
 cost: 免费基础版
-readingTime: 3
+readingTime: 8
 difficulty: 小白
 icon: simple-icons:openai
 color: "#10a37f"
 publishedAt: 2026-08-09
-verifiedAt: 2026-08-09
+verifiedAt: 2026-08-10
 externalUrl: https://chatgpt.com
 featured: true
 status: published
 priority: 50
-updatedAt: 2026-08-09
+updatedAt: 2026-08-10
 updatedBy: human
 sources:
   - https://help.openai.com/en/articles/12677804
   - https://help.openai.com/en/articles/8983675
   - https://help.openai.com/en/articles/7730893-how-do-i-delete-my-chat-history
+  - https://help.openai.com/en/articles/8555545-chatgpt-search
+  - https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt
+  - https://help.openai.com/en/articles/10500283-research-faq
+  - https://help.openai.com/en/articles/11780217-chatgpt-study-mode-faq
 ---
 
-## 最适合
+## 现在最值得用的 5 种方式
 
-写作、总结、解释概念、拆解任务、分析常见办公文件，以及在需要近期信息时搜索网页。
+### 1. 处理 PDF 和 Word
 
-## 不适合直接交付
+在输入框点击附件按钮上传文件。不要只说“总结”，而是指定页码、用途和输出结构。
 
-- 不经核查的事实、数字和引用。
-- 包含账号、个人信息或商业机密的材料。
-- 需要承担专业责任的医疗、法律和财务结论。
+<PromptBlock title="PDF 实用提问">
+先识别这份 PDF 的目录和主要章节。然后只处理第 [页码] 页到第 [页码] 页，输出：核心结论、支持结论的原文、需要进一步确认的问题、可以执行的待办。不要补充文件中没有的信息。
+</PromptBlock>
 
-## 免费与数据说明
+官方文件说明显示，常见 PDF、DOCX、PPTX、XLSX、CSV 和 TXT 都可上传。普通计划对文档主要使用文字检索；**PDF 内嵌图表和图片的完整视觉读取目前仅明确支持 Enterprise**。扫描件、复杂版式和图片表格最好单独截图上传或先做 OCR。
 
-官方将免费版描述为具有基础用量限制，具体额度会变化。个人工作区可以在“数据控制”中关闭“为所有人改进模型”；临时聊天不会进入历史记录，也不会用于训练模型，并按官方说明在 30 天后从系统删除。
+### 2. 检查和改写 PPT
 
-## 注意
+上传 PPTX 后，让它先提取每页标题、观点和证据，再检查重复页面、逻辑断点和文字密度。ChatGPT 适合修改内容结构，不等于会保留原始版式。
 
-重要事实需要核查。文件分析支持常见文档、表格和演示格式，但功能与额度可能随计划变化。
+<PromptBlock title="PPT 检查模板">
+读取这份 PPT，按页输出：本页核心观点、支持证据、与上一页的关系、需要删减的文字。最后给出新的页面顺序。不要改动原始数字；发现数字没有来源时单独标记。
+</PromptBlock>
+
+### 3. 分析 Excel 和 CSV
+
+上传结构清楚的表格后，可以要求它检查列、空值、异常值，运行计算并生成图表。官方建议第一行使用清晰列名、一行一条记录，避免同一工作表放多个无关表格。
+
+<PromptBlock title="表格分析模板">
+先不要直接下结论。请检查工作表、列名、行数、空值、重复值和数据类型，并列出你准备使用的计算方法。确认后再按 [维度] 汇总 [指标]，展示计算过程，并生成适合的图表。
+</PromptBlock>
+
+### 4. 搜索与深度研究
+
+快速事实使用 Search；需要跨多个网页、上传文件和指定网站形成完整报告时使用 Deep research。深度研究会先给出研究计划，可以在执行前修改来源范围，完成后提供引用和来源列表。
+
+### 5. 学习模式
+
+在工具菜单选择 Study，或输入 `@study`。上传课程 PDF、讲义或题目后，它会通过提问、分层解释和小测验帮助学习，而不是只给最终答案。当前官方说明 Study Mode 不在 Projects 和 GPT 对话中使用。
+
+## 数据和限制
+
+- 免费账户存在文件上传和模型用量限制，额度可能变化。
+- 个人账户可在“设置 → 数据控制”关闭“为所有人改进模型”。
+- 临时聊天不进入历史记录、不创建记忆，也不用于训练，并按官方说明在 30 天后删除。
+- 重要文件仍应脱敏；关闭训练不等于可以上传无权处理的资料。
+
+<Callout type="warning" title="检查重点">
+文件上传成功不代表整份内容都被正确读取。对页码、表格、图片和长文档，应抽查关键位置并要求引用原文。
+</Callout>

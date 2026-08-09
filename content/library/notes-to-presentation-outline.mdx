@@ -1,10 +1,10 @@
 ---
-title: 从零散资料生成一份汇报大纲
-summary: 先整理证据和结论，再形成适合会议表达的页面结构。
+title: 用 AI 把资料做成一份可编辑 PPT
+summary: 从 PDF、Word 或零散记录提炼证据和大纲，再用 NotebookLM、Gamma 或 Canva 生成可编辑初稿。
 type: 工作流
-scenario: 办公处理
+scenario: 制作 PPT
 cost: 免费
-readingTime: 8
+readingTime: 10
 difficulty: 小白
 icon: solar:presentation-graph-bold
 color: "#dc8436"
@@ -12,12 +12,24 @@ publishedAt: 2026-08-09
 featured: true
 status: published
 priority: 82
-updatedAt: 2026-08-09
+updatedAt: 2026-08-10
 updatedBy: human
-sources: []
+sources:
+  - https://support.google.com/notebooklm/answer/16757456
+  - https://help.gamma.app/en/articles/11047840-how-can-i-import-slides-or-documents-into-gamma
+  - https://www.canva.com/create/ai-presentations/
 ---
 
-不要把一堆材料直接交给演示生成工具。先建立“听众需要知道什么”的逻辑，再考虑页面设计。
+不要把一堆材料直接交给演示生成工具。先确定听众和结论，再选择最适合的生成入口。
+
+## 工具怎么选
+
+| 手上的内容 | 优先工具 | 用法 |
+|---|---|---|
+| 多份 PDF，需要引用 | NotebookLM Slide Deck | 从选中的来源生成演示，可下载 PPTX |
+| 已有大纲或旧 PPT | Gamma | Paste in text 或 Import 后重新排版 |
+| 已有内容，重视模板和素材 | Canva | Magic Design 生成模板后精细编辑 |
+| 材料混乱，需要先提炼逻辑 | ChatGPT | 先生成事实表和页面大纲 |
 
 <Steps>
 ### 第一步：确定汇报任务
@@ -36,11 +48,19 @@ sources: []
 
 每页只保留一个观点，包括页面标题、关键证据和希望听众记住的结论。
 
-### 第五步：再进入 Gamma 或 Canva
+### 第五步：生成演示初稿
 
-把审核后的大纲用于生成版式初稿。最后人工检查数字、图表、字体和页面密度。
+需要来源约束时进入 NotebookLM Studio 生成 Slide Deck；已有大纲时交给 Gamma；需要丰富模板和素材时进入 Canva。
+
+### 第六步：导出后检查
+
+检查每页数字、引用、图片授权、字体、16:9 比例和文字溢出。PPTX 必须在最终播放软件和设备上试播。
 </Steps>
 
 <PromptBlock title="汇报大纲模板">
 你是汇报结构编辑。\n听众：[谁]\n会议目标：[希望确认什么]\n时长：[分钟]\n材料：[粘贴已脱敏的事实表]\n请先写一句话主线，再给出不超过 8 页的大纲。每页包含：观点式标题、最多 3 条证据、建议的视觉形式。材料没有支持的结论标记“证据不足”，不要补写数字。
 </PromptBlock>
+
+<Callout type="info" title="不要让 AI 决定一切">
+AI 可以节省拆页和排版时间，但演示真正需要你决定的是观点、证据、取舍和现场表达。
+</Callout>

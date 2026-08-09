@@ -7,12 +7,15 @@ import {SiteHeader} from "@/components/site-header";
 import {isPublished, isReviewOverdue, sortByPriorityAndDate} from "@/lib/content";
 
 const taskEntries = [
-  ["solar:document-text-bold", "#3b82f6", "处理文档", "总结 PDF、提取问题和待办", "学习与文档"],
-  ["solar:microphone-3-bold", "#13a47c", "整理会议", "录音、纪要、责任人与截止时间", "办公处理"],
-  ["solar:pen-new-square-bold", "#7c5cff", "写作编辑", "邮件、周报、大纲和内容修改", "写作编辑"],
-  ["solar:table-2-bold", "#16a05d", "表格数据", "公式、分析、清洗和图表建议", "表格数据"],
-  ["solar:presentation-graph-bold", "#e7852e", "演示设计", "PPT、流程图和内容配图", "设计与图像"],
-  ["solar:magnifer-bold", "#d55d9a", "搜索研究", "查资料、找来源和比较信息", "搜索研究"],
+  ["solar:document-text-bold", "#3b82f6", "处理 PDF", "总结、问答、提取表格和核对引用", "处理 PDF"],
+  ["solar:presentation-graph-bold", "#e7852e", "制作 PPT", "从资料到大纲、页面和可编辑初稿", "制作 PPT"],
+  ["solar:table-2-bold", "#16a05d", "处理表格", "公式、清洗、分析和图表", "处理表格"],
+  ["solar:microphone-3-bold", "#13a47c", "整理会议", "转写、纪要、责任人与截止时间", "整理会议"],
+  ["solar:magnifer-bold", "#d55d9a", "搜索资料", "查网页、找来源和生成证据表", "搜索资料"],
+  ["solar:pen-new-square-bold", "#7c5cff", "写作改稿", "邮件、周报、改写和内容检查", "写作改稿"],
+  ["solar:gallery-wide-bold", "#e9517e", "处理图片", "生成配图、放大和清理素材", "处理图片"],
+  ["solar:notebook-bold", "#4285f4", "学习资料", "课程问答、复习卡和学习计划", "学习资料"],
+  ["solar:branching-paths-up-bold", "#6c5ce7", "绘制图表", "流程图、思维导图和线框图", "绘制图表"],
 ];
 
 export default function Home() {
@@ -36,7 +39,7 @@ export default function Home() {
 
     <section className="core-paths">
       <a href="/weekly" className="core-path weekly-path"><span><Icon icon="solar:calendar-mark-bold" /></span><div><b>每周总结</b><h2>这周先看什么，我们替你筛好</h2><p>一个变化、一个方法、一个工作流、一个工具和一个五分钟行动。</p></div><Icon icon="solar:arrow-right-linear" /></a>
-      <a href="/resources" className="core-path library-path"><span><Icon icon="solar:folder-with-files-bold" /></span><div><b>资料库</b><h2>按任务找到方法、工作流和工具</h2><p>所有长期内容集中在一个地方，通过关键词和场景筛选。</p></div><Icon icon="solar:arrow-right-linear" /></a>
+      <a href="/resources" className="core-path library-path"><span><Icon icon="solar:folder-with-files-bold" /></span><div><b>资料库</b><h2>按 PDF、PPT、表格等任务直接找</h2><p>不用先研究工具分类，选择手上的文件和要完成的结果。</p></div><Icon icon="solar:arrow-right-linear" /></a>
     </section>
 
     <section className="task-section">

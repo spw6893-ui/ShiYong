@@ -86,7 +86,7 @@ content/weekly/2026-08-week-3.mdx
 ## 字段规则
 
 - `type`：方法 / 工作流 / 工具 / 汇总
-- `scenario`：必须使用 `content-collections.ts` 中定义的场景
+- `scenario`：必须使用 `content-collections.ts` 中定义的任务分类；含义见 `docs/content-taxonomy.md`
 - `cost`：免费 / 免费基础版 / 付费可选
 - `difficulty`：小白 / 熟练
 - `publishedAt`、`verifiedAt`：`YYYY-MM-DD`

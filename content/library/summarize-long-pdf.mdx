@@ -1,10 +1,10 @@
 ---
 title: 把长 PDF 变成摘要、问题和待办
-summary: 不止生成摘要，而是直接得到可以检查、追问和执行的结果。
+summary: 判断 PDF 类型后选择 ChatGPT 或 NotebookLM，完成目录检查、定向提取、引用核对和行动项。
 type: 工作流
-scenario: 学习与文档
+scenario: 处理 PDF
 cost: 免费
-readingTime: 8
+readingTime: 10
 difficulty: 小白
 icon: solar:document-text-bold
 color: "#347de0"
@@ -12,37 +12,63 @@ publishedAt: 2026-08-09
 featured: true
 status: published
 priority: 95
+updatedAt: 2026-08-10
+updatedBy: human
+sources:
+  - https://help.openai.com/en/articles/8555545-chatgpt-search
+  - https://help.openai.com/en/articles/10416312-visual-retrieval-with-pdfs-faq
+  - https://support.google.com/notebooklm/answer/16215270
 ---
 
-直接要求“总结这份 PDF”通常只能得到泛泛的内容。更有效的方法是先说明用途，再指定三个输出区块。
+直接要求“总结这份 PDF”通常只能得到泛泛内容。先判断它是文字 PDF、扫描件还是包含大量图表的报告，再选择工具和提问方式。
+
+## 先选工具
+
+| PDF 情况 | 优先选择 | 原因 |
+|---|---|---|
+| 一份文件，想提取、改写或形成待办 | ChatGPT | 适合把文件结果继续加工成交付物 |
+| 多份资料，需要长期问答和引用 | NotebookLM | 可以选择来源并回到引用位置 |
+| 需要结合公开网页补充研究 | ChatGPT Deep research | 可以同时使用文件和网页 |
+| 扫描件或复杂图片表格 | 先 OCR 或单独上传截图 | 普通文字检索可能忽略视觉内容 |
+
+<Callout type="warning" title="PDF 图片限制">
+OpenAI 当前明确说明，PDF 内嵌图片和图表的完整视觉检索只提供给 ChatGPT Enterprise。其他计划通常以提取文字为主。关键图表应单独截图检查。
+</Callout>
 
 ## 准备材料
 
 - 一份不含敏感信息的 PDF。
 - 你阅读它的目的，例如准备会议、考试或项目决策。
-- ChatGPT、豆包或 NotebookLM 中任意一个可处理文档的工具。
+- ChatGPT 或 NotebookLM。
 
 <Steps>
 ### 第一步：说明用途
 
-告诉 AI 你为什么阅读这份文件，以及你最关心的问题。
+先让 AI 列出文件标题、页数、目录和能够读取的章节。确认没有缺页或乱码后，再说明用途和重点。
 
 ### 第二步：指定输出
 
-要求分别输出摘要、关键问题和行动项。
+先指定页码或章节，再分别输出摘要、原文证据、关键问题和行动项。不要第一次就处理整本文件。
 
 ### 第三步：回到原文核查
 
-重点检查数字、时间、责任人和引用内容。
+重点检查数字、时间、责任人、否定条件和引用内容。NotebookLM 点击引用；ChatGPT 要求附页码和原文片段，再手动打开 PDF 核对。
 
 ### 第四步：继续追问
 
-只围绕不清楚的部分追问，不要一次要求 AI 重写全部内容。
+把结果分成“文件明确说明”“根据文件推断”“文件没有说明”三部分，再围绕缺口追问。
 </Steps>
 
 <PromptBlock title="文档整理模板">
-我阅读这份文档的目的是：[填写用途]。\n请基于文档内容输出：\n1. 不超过 300 字的核心摘要；\n2. 5 个需要进一步确认的问题，并标注依据位置；\n3. 可以执行的行动项，包括负责人、时间和前置条件；\n4. 列出你无法从文档中确认的信息，不要自行补充。
+我阅读这份 PDF 的目的是：[填写用途]。\n先确认你能读取的页数和目录。然后只处理第 [页码] 页到第 [页码] 页，输出：\n1. 不超过 300 字的核心摘要；\n2. 关键结论、页码和支持它的原文；\n3. 需要进一步确认的问题；\n4. 可以执行的行动项；\n5. 文件没有说明或你无法读取的信息。\n不要根据常识补写。
 </PromptBlock>
+
+## 进一步产出
+
+- **学习**：NotebookLM Studio 生成测验、闪卡、学习指南或音频概览。
+- **汇报**：NotebookLM 直接生成 Slide Deck，或把确认后的大纲交给 Gamma。
+- **对比**：将多份 PDF 放入同一个 Notebook，按定义、结论、证据和限制形成表格。
+- **表格**：复杂表格优先提取到 XLSX/CSV 后再使用数据分析工具。
 
 <Callout type="warning" title="上传前检查">
 删除姓名、手机号、账号、合同价格、客户数据和公司内部信息。无法匿名化的材料不要上传到公共 AI 服务。

@@ -1,37 +1,71 @@
 ---
 title: Perplexity
-summary: 适合查找公开资料，并沿着引用入口检查网页来源。
+summary: 用普通搜索快速找资料，用 Pro Search 或 Deep Research 做多来源研究，并沿引用回到原文。
 type: 工具
-scenario: 搜索研究
+scenario: 搜索资料
 cost: 免费基础版
-readingTime: 3
+readingTime: 7
 difficulty: 小白
 icon: solar:magnifer-bold
 color: "#168b8c"
 publishedAt: 2026-08-09
-verifiedAt: 2026-08-09
+verifiedAt: 2026-08-10
 externalUrl: https://www.perplexity.ai
 featured: true
 status: published
 priority: 35
-updatedAt: 2026-08-09
+updatedAt: 2026-08-10
 updatedBy: human
 sources:
   - https://www.perplexity.ai/help-center/en/articles/10352155-what-is-perplexity
   - https://www.perplexity.ai/help-center/en/articles/10352895-how-does-perplexity-work
+  - https://www.perplexity.ai/help-center/en/articles/13600190-what-s-new-in-advanced-deep-research
 ---
 
-## 最适合
+## 三种用法怎么选
 
-快速了解陌生主题、查找近期公开信息和寻找原始来源入口。官方说明每个回答会提供指向原始来源的引用链接。
+| 任务 | 入口 | 适合情况 |
+|---|---|---|
+| 查一个近期事实 | Search | 快速得到摘要和来源入口 |
+| 比较多个产品或观点 | Pro Search | 执行更完整的多轮搜索 |
+| 形成一份多来源报告 | Deep Research | 跨更多来源进行综合和交叉检查 |
 
-## 推荐用法
+## 搜索资料的具体流程
 
-1. 先把问题拆成事实、时间和比较维度。
-2. 要求优先使用官方文档或原始资料。
-3. 打开关键引用，核对发布日期与上下文。
-4. 把确认后的证据交给通用助手继续写作或分析。
+<Steps>
+### 第一步：限定问题
 
-## 注意
+写明时间范围、地区、比较对象和希望使用的来源类型。问题越具体，越容易检查结果。
 
-列出来源不代表引用一定准确，也不保证来源质量一致。不要只阅读 AI 摘要。
+### 第二步：要求一方来源
+
+产品能力优先官方文档，法规优先政府原文，研究优先论文和原始数据。不要让新闻转述替代原始资料。
+
+### 第三步：打开引用
+
+至少检查两条关键来源，确认原文、发布日期和语境确实支持回答中的结论。
+
+### 第四步：继续追问缺口
+
+要求列出来源之间的冲突、没有找到证据的结论，以及还需要哪些材料。
+
+### 第五步：保存证据表
+
+把结论、URL、发布日期、核查日期和原文位置保存下来，不要只复制最终摘要。
+</Steps>
+
+<PromptBlock title="Perplexity 研究模板">
+研究主题：[问题]\n范围：[时间、地区、对象]\n优先来源：官方文档、原始数据和论文。\n请输出证据表：结论、来源、发布日期、原文支持位置、可信度、待确认项。来源之间冲突时并列展示，不要强行合并。
+</PromptBlock>
+
+## 处理上传文件
+
+在支持文件来源的搜索模式或项目空间中，可以把上传文件与网页一起研究。需要明确区分“文件内部事实”和“网页补充信息”，否则回答可能把两类来源混在一起。
+
+## 当前变化
+
+Perplexity 在 2026 年继续强化 Advanced Deep Research，可处理上传文档、执行计算并进行更深的网页检索。具体可用次数、模型选择和文件能力受计划影响。
+
+<Callout type="warning" title="引用不等于正确">
+引用可能只与主题相关，却没有直接支持旁边的结论。最终依据仍是你打开后看到的原文。
+</Callout>

@@ -5,8 +5,8 @@ import remarkGfm from "remark-gfm";
 
 const contentTypes = ["方法", "工作流", "工具", "汇总"] as const;
 const scenarios = [
-  "通用助手", "搜索研究", "学习与文档", "写作编辑", "办公处理",
-  "表格数据", "设计与图像", "视频与音频", "信息管理",
+  "处理 PDF", "制作 PPT", "处理表格", "整理会议", "搜索资料",
+  "写作改稿", "处理图片", "绘制图表", "学习资料", "综合任务",
 ] as const;
 const costs = ["免费", "免费基础版", "付费可选"] as const;
 const statuses = ["draft", "published"] as const;

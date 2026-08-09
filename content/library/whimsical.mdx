@@ -1,37 +1,57 @@
 ---
 title: Whimsical
-summary: 协作制作流程图、线框图和思维导图。
+summary: 从文字生成流程图、思维导图和线框图，再用自动布局和人工检查完成结构表达。
 type: 工具
-scenario: 设计与图像
+scenario: 绘制图表
 cost: 免费基础版
-readingTime: 3
+readingTime: 6
 difficulty: 小白
 icon: solar:branching-paths-up-bold
 color: "#6c5ce7"
 publishedAt: 2026-08-09
-verifiedAt: 2026-08-09
+verifiedAt: 2026-08-10
 externalUrl: https://whimsical.com
 featured: false
 status: published
 priority: 15
-updatedAt: 2026-08-09
+updatedAt: 2026-08-10
 updatedBy: human
 sources:
   - https://whimsical.com/pricing
+  - https://whimsical.com/ai
+  - https://whimsical.com/releases/2026-4-flowchart-auto-layout
 ---
 
-## 最适合
+## 当前 AI 能做什么
 
-团队共同梳理流程、页面结构和思维导图。AI 功能可以从文字生成流程图、思维导图和线框图初稿。
+Whimsical AI 当前支持生成流程图、思维导图和线框图，也可以围绕工作区内容提问。2026 年的更新加入流程图自动布局；AI 流程图和思维导图当前由 Claude 模型提供支持。
+
+## 生成流程图
+
+不要只输入“画一个报销流程”。先写参与者、开始条件、判断分支、异常路径和结束状态。
+
+<PromptBlock title="流程图输入模板">
+绘制 [流程名称]。\n参与者：[角色]\n开始条件：[事件]\n主要步骤：[按顺序列出]\n判断条件：[是/否分别去哪里]\n异常情况：[超时、拒绝、资料不全]\n结束状态：[完成、失败、退回]。\n每个节点使用动词开头，不要省略异常路径。
+</PromptBlock>
+
+生成后从起点沿每一条线实际走一遍，再使用 Auto-layout 整理布局。自动布局只能整理视觉位置，不能发现业务逻辑错误。
+
+## 生成思维导图
+
+适合把一个主题展开成层级结构。第一次只生成两到三级，删除无关分支后再针对一个节点继续扩展，避免得到庞大但没有重点的图。
+
+## 生成线框图
+
+先说明设备、用户目标、页面区块和关键操作。生成结果适合讨论信息结构，不应直接作为最终视觉设计或开发规格。
+
+## Agentic 用法
+
+Whimsical 当前也提供 MCP，可连接 Claude、ChatGPT、Cursor、Codex 等兼容客户端，让 Agent 创建或读取图表。接入前要限制工作区权限，并检查 Agent 是否可能修改现有文件。
 
 ## 免费范围
 
-官方价格页当前列出免费计划，并说明每个工作区合计提供有限 AI credits；免费计划的协作、文件上传和版本历史也有限制。
+当前免费计划提供有限的工作区 AI credits，并限制团队 boards、文件上传和版本历史。额度和计划权益以官方价格页为准。
 
-## 推荐流程
-
-先用文字列出节点、责任人和判断条件，再生成图。完成后从起点沿每条路径检查遗漏、循环和没有出口的分支。
-
-## 注意
-
-更适合结构表达，不替代专业视觉设计软件；包含内部流程时注意共享权限。
+<Callout type="warning" title="适用边界">
+Whimsical 适合表达结构，不替代正式 BPMN 建模、产品视觉设计或经过评审的系统架构图。
+</Callout>

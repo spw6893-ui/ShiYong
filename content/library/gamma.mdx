@@ -1,38 +1,74 @@
 ---
 title: Gamma
-summary: 从主题和大纲快速生成演示文稿初稿。
+summary: 从大纲、Word、PDF、网页或旧 PPT 生成新的演示初稿，再用 Agent 调整页面和导出 PPTX。
 type: 工具
-scenario: 办公处理
+scenario: 制作 PPT
 cost: 免费基础版
-readingTime: 3
+readingTime: 7
 difficulty: 小白
 icon: solar:presentation-graph-bold
 color: "#8b5cf6"
 publishedAt: 2026-08-09
-verifiedAt: 2026-08-09
+verifiedAt: 2026-08-10
 externalUrl: https://gamma.app
 featured: true
 status: published
 priority: 30
-updatedAt: 2026-08-09
+updatedAt: 2026-08-10
 updatedBy: human
 sources:
   - https://help.gamma.app/en/articles/8022861-what-s-the-easiest-way-to-export-my-gamma
   - https://help.gamma.app/en/articles/7834324-how-do-credits-work-in-gamma
+  - https://help.gamma.app/en/articles/11047840-how-can-i-import-slides-or-documents-into-gamma
+  - https://help.gamma.app/en/articles/11016396-what-are-slides-in-gamma-and-how-do-they-work
+  - https://help.gamma.app/en/articles/15002203-how-do-i-create-with-agent-in-gamma
 ---
 
-## 最适合
+## 先选对入口
 
-已有主题、观点和大纲，需要快速得到演示结构和页面初稿。可以导出 PDF、PNG 和 PowerPoint。
+| 你手上的材料 | 推荐入口 | 结果 |
+|---|---|---|
+| 只有主题 | Generate | 自动生成大纲和页面 |
+| 已有完整大纲 | Paste in text | 尽量保留内容结构 |
+| 旧 PPT、Word、PDF、网页 | Import | 提取文字后重新排版 |
+| 多份来源、需要共同整理结构 | Create with Agent | 先对话确认大纲再生成 |
+
+## 用旧 PPT 或 PDF 重做一版
+
+<Steps>
+### 第一步：选择 Import
+
+普通 Import 会按原页面或标题拆分文字；Import with AI 会重新选择主题和布局。Gamma 当前主要导入**文字内容**，不会完整复制原文件的版式。
+
+### 第二步：先检查拆页
+
+导入文档时，一个标题通常形成一页。可以提前在文本中使用 `/split` 明确分页，避免一页塞入太多内容。
+
+### 第三步：用 Agent 局部修改
+
+在页面上点击闪光图标或顶部 Agent，要求它重写当前页、换布局或新增一页。不要整套重新生成，先保留已经满意的页面。
+
+### 第四步：固定页面比例
+
+如果最终要进入 PowerPoint，建议在 Page Setup 选择固定 16:9，并检查文字是否超过页面边界。
+
+### 第五步：导出
+
+可以导出 PDF、PNG 或 PPTX。导出的 PowerPoint 可能出现字体替换和细节差异，必须在最终播放设备上检查。
+</Steps>
+
+<PromptBlock title="Gamma 大纲输入模板">
+受众：[谁]\n汇报目标：[希望对方做什么]\n页数：[6—10 页]\n每页使用观点式标题，不使用“背景介绍”这类空标题。\n必须保留的数据和来源：[列出]\n不要新增材料中没有的数字。最后一页给出明确行动。
+</PromptBlock>
+
+## 2026 年的新用法：Create with Agent
+
+官方当前把 Create with Agent 作为实验功能提供给部分付费工作区。它可以同时读取 PDF、文档、旧演示、网页和图片，先与你讨论大纲，再生成页面，并尽可能保留来源引用。适合多材料汇报，但不属于免费版的基础功能。
 
 ## 免费范围
 
-免费计划使用 AI 会消耗初始积分，官方说明这些积分不会定期刷新；免费账户导出的演示会保留 Gamma 标识。具体积分消耗可能变化。
+免费计划的 AI 生成消耗初始 credits，当前不会周期性刷新；免费导出带 Gamma 标识。实际积分消耗和计划权益以账户内显示为准。
 
-## 推荐流程
-
-先在文档中确认观点和页数，再把每页标题与证据交给 Gamma。导出后检查字体替换、页面溢出、图片授权和数据准确性。
-
-## 注意
-
-它更像“快速形成可编辑初稿”，不能替你完成事实核查和最终演示设计。
+<Callout type="warning" title="Gamma 的定位">
+Gamma 最擅长快速形成可编辑演示初稿。论点、数据、图表比例、字体和演讲节奏仍需要人工处理。
+</Callout>

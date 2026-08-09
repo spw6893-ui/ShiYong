@@ -36,6 +36,7 @@ npm start
 - `content/weekly/`：每周总结 MDX 内容
 - `docs/content-authoring.md`：内容添加与组件说明
 - `docs/content-research-playbook.md`：内容调研、收录和 Agent 更新规则
+- `docs/content-taxonomy.md`：PDF、PPT、表格等任务分类的单一规范
 
 ## 持续集成与部署
 
